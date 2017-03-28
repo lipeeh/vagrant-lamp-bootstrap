@@ -55,3 +55,19 @@ sudo apt-get -y install git
 # install Composer
 curl -s https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
+
+# install PHP 7
+sudo apt-get -y update
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get -y install php7.0
+sudo apt-get -y update
+sudo apt-get -y install php7.0-mysql libapache2-mod-php7.0
+sudo a2dismod php5
+sudo a2enmod php7.0
+service apache2 restart
+
+# ERRO DO PHP MBSTRING
+sudo apt-get install php-mbstring
+sudo service apache2 restart
+
+
